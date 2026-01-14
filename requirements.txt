@@ -1,0 +1,14 @@
+# Core AI/LLM
+langchain>=0.3.0
+langchain-google-genai>=2.0.0
+langgraph>=0.2.0
+
+# Financial Data
+openbb>=4.0.0
+
+# Web Framework
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# Utilities
+python-dotenv>=1.0.0
