@@ -108,27 +108,17 @@ The platform performs institutional-grade quantitative analysis on demand — se
 FinAI implements a **production-grade multi-agent system** using the ReAct (Reason + Act) pattern:
 
 ```mermaid
-flowchart TB
-    subgraph ORCHESTRATION["🔄 MULTI-AGENT ORCHESTRATION"]
-        A[/"👤 User Query"/] --> B["🧠 REASONING ENGINE<br/>Gemini 3 Flash"]
-        
-        B --> C{"Intent<br/>Classification"}
-        
-        C --> D["🛠️ TOOL ORCHESTRATION<br/>LangChain ReAct Agent"]
-        
-        subgraph TOOLS["Available Tools"]
-            T1["📊 get_stock_quote"]
-            T2["📈 analyze_portfolio"]
-            T3["🔥 get_top_gainers"]
-            T4["🏢 get_company_profile"]
-            T5["📉 get_historical_data"]
-            T6["⚖️ compare_stocks"]
-        end
-        
-        D --> TOOLS
-        TOOLS --> E["📊 DATA SYNTHESIS"]
-        E --> F[/"💬 Response"/]
-    end
+flowchart TD
+    A["👤 User Query"] --> B["🧠 Reasoning Engine<br/>Gemini 3 Flash Preview"]
+    B --> C["🔍 Intent Classification"]
+    C --> D["🛠️ Tool Orchestration<br/>LangChain ReAct Agent"]
+    D --> E["📊 get_stock_quote"]
+    D --> F["📈 analyze_portfolio"]
+    D --> G["🔥 get_top_gainers"]
+    D --> H["🏢 get_company_profile"]
+    D --> I["📉 get_historical_data"]
+    E & F & G & H & I --> J["📊 Data Synthesis"]
+    J --> K["💬 Response to User"]
 ```
 
 **Key Capabilities:**
