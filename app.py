@@ -570,10 +570,12 @@ def health():
     })
 
 
+# Initialize agent when module loads (for gunicorn)
+init_agent()
+
+
 if __name__ == '__main__':
-    # Initialize agent
-    init_agent()
-    
-    # Run Flask server
-    logger.info("Starting Flask server on http://127.0.0.1:5000")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Run Flask server (development only)
+    port = int(os.environ.get('PORT', 5000))
+    logger.info(f"Starting Flask server on http://127.0.0.1:{port}")
+    app.run(debug=True, host='0.0.0.0', port=port)

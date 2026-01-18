@@ -457,15 +457,23 @@
                 <div class="message-row bot">
                     <div class="avatar bot"><i class="fa-solid fa-robot"></i></div>
                     <div class="message-bubble">
-                        Hello! I'm your advanced AI financial assistant.
+                        Hello! I'm your advanced AI financial assistant powered by <b>Gemini 3</b> with real-time market
+                        data.
                         <br><br>
-                        Ask me about:
+                        <b>📊 What I can do:</b>
                         <ul>
-                            <li>Stock prices (e.g. "Price of AAPL")</li>
-                            <li>Market caps (e.g. "Market cap of TSLA")</li>
-                            <li>Company info (e.g. "Info on Microsoft")</li>
-                            <li>Top gainers today</li>
+                            <li><b>Stock Quotes</b> — "What's the price of AAPL?"</li>
+                            <li><b>Company Profiles</b> — "Tell me about Microsoft"</li>
+                            <li><b>Financial Metrics</b> — "What's Tesla's P/E ratio?"</li>
+                            <li><b>Compare Stocks</b> — "Compare AAPL, MSFT, and GOOGL"</li>
+                            <li><b>Historical Data</b> — "How did NVDA perform last 6 months?"</li>
+                            <li><b>Market Overview</b> — "How are the markets doing today?"</li>
+                            <li><b>Top Gainers</b> — "What stocks are up the most today?"</li>
+                            <li><b>Top Losers</b> — "Show me today's biggest losers"</li>
+                            <li><b>Portfolio Analysis</b> ⭐ — "Analyze my portfolio: AAPL:50, MSFT:30, TSLA:20"</li>
                         </ul>
+                        <br>
+                        ⭐ <i>Portfolio Analysis is a unique feature that ChatGPT and Gemini web apps cannot do!</i>
                     </div>
                 </div>
             </div>
@@ -651,7 +659,7 @@
 
         async function sendMessage(message) {
             try {
-                const response = await fetch('http://127.0.0.1:5000/chat', {
+                const response = await fetch('/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: message })

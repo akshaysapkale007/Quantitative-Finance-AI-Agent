@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+.git/
+.gitignore
+*.md
+v1-legacy/
+.ruff_cache/
+test_output.txt
+chatbot_cli.py
+*.html
+!templates/*.html
