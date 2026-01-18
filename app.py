@@ -571,7 +571,11 @@ def health():
 
 
 # Initialize agent when module loads (for gunicorn)
-init_agent()
+try:
+    init_agent()
+except Exception as e:
+    logger.error(f"Failed to initialize agent on startup: {e}")
+    agent = None
 
 
 if __name__ == '__main__':
